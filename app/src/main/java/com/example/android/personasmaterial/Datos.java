@@ -10,7 +10,7 @@ public class Datos {
         personas.add(p);
     }
 
-    public ArrayList<Persona> obtener(){
+    public static ArrayList<Persona> obtener(){
         return personas;
     }
 }
