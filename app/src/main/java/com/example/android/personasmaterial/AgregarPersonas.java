@@ -1,10 +1,12 @@
 package com.example.android.personasmaterial;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -63,9 +65,9 @@ public class AgregarPersonas extends AppCompatActivity {
 
         Persona p = new Persona(foto, ced, nomb, apell, sexo);
         p.guardar();
-        Snackbar.make(v, getResources().getString(R.string.guardado_exitoso), Snackbar.LENGTH_SHORT).show();
-
         limpiar();
+
+        Snackbar.make(v, getResources().getString(R.string.guardado_exitoso), Snackbar.LENGTH_SHORT).show();
     }
 
     public void limpiar(){
@@ -74,6 +76,8 @@ public class AgregarPersonas extends AppCompatActivity {
         txtApellido.setText("");
         cmbSexo.setSelection(0);
         txtCedula.requestFocus();
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
     public void onBackPressed(){
