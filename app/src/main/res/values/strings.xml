@@ -10,6 +10,7 @@
     <string name="masculino">Masculino</string>
     <string name="femenino">Femenino</string>
     <string name="guardado_exitoso">Persona guardada exitosamente</string>
+    <string name="selecFoto">Seleccionar foto</string>
 
     <string-array name="sexo">
         <item>@string/masculino</item>

@@ -91,4 +91,11 @@ public class AgregarPersonas extends AppCompatActivity {
     public void limpiar(View v){
         limpiar();
     }
+
+    public void seleccionar_foto(View v){
+        Intent i = new Intent();
+        i.setType("image/*");
+        i.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(i, getResources().getString(R.string.selecFoto)), 1);
+    }
 }
