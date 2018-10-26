@@ -1,13 +1,19 @@
 package com.example.android.personasmaterial;
 
 public class Persona {
-    private int foto;
+
+    private String id;
+    private String foto;
     private String cedula;
     private String nombre;
     private String apellido;
     private int sexo;
 
-    public Persona(int foto, String cedula, String nombre, String apellido, int sexo) {
+    public Persona() {
+
+    }
+    public Persona(String id, String foto, String cedula, String nombre, String apellido, int sexo) {
+        this.id = id;
         this.foto = foto;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -15,11 +21,19 @@ public class Persona {
         this.sexo = sexo;
     }
 
-    public int getFoto() {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(int foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 
